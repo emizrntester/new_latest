@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+	<table name="mock_exam_mockexam" resource="default" engine="innodb" comment="mock_exam_mockexam Table">
+		<column xsi:type="int" name="mockexam_id" padding="10" unsigned="true" nullable="false" identity="true" comment="Entity Id"/>
+		<constraint xsi:type="primary" referenceId="PRIMARY">
+			<column name="mockexam_id"/>
+		</constraint>
+		<column name="question" nullable="true" xsi:type="text" comment="question"/>
+		<column name="answer" nullable="true" xsi:type="text" comment="answer"/>
+		<column name="choice1" nullable="true" xsi:type="text" comment="choice1"/>
+		<column name="choice2" nullable="true" xsi:type="text" comment="choice2"/>
+		<column name="choice3" nullable="true" xsi:type="text" comment="choice3"/>
+		<column name="choice4" nullable="true" xsi:type="text" comment="choice4"/>
+		<column name="choice5" nullable="true" xsi:type="text" comment="choice5"/>
+		<column name="choice6" nullable="true" xsi:type="text" comment="choice6"/>
+		<column name="type_question" nullable="true" xsi:type="text" comment="type_question"/>
+	</table>
+</schema>

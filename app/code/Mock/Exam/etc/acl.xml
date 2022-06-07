@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+	<acl>
+		<resources>
+			<resource id="Magento_Backend::admin">
+				<resource id="Mock_Exam::mockexam" title="mockexam" sortOrder="10">
+					<resource id="Mock_Exam::mockexam_save" title="Save mockexam" sortOrder="10"/>
+					<resource id="Mock_Exam::mockexam_delete" title="Delete mockexam" sortOrder="20"/>
+					<resource id="Mock_Exam::mockexam_update" title="Update mockexam" sortOrder="30"/>
+					<resource id="Mock_Exam::mockexam_view" title="View mockexam" sortOrder="40"/>
+				</resource>
+				<resource id="Magento_Backend::stores">
+					<resource id="Magento_Backend::stores_settings">
+						<resource id="Magento_Config::config">
+							<resource id="Mock_Exam::config_mock_exam" title="exam"/>
+						</resource>
+					</resource>
+				</resource>
+			</resource>
+		</resources>
+	</acl>
+</config>

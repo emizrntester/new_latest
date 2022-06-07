@@ -1,0 +1,7 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../Backend/etc/menu.xsd">
+    <menu>
+        <add id="Emizen_Techdata::view" title="Techdata Menu" module="Emizen_Techdata" sortOrder="10" resource="Emizen_Techdata::view"/>
+
+        <add id="Emizen_Techdata::display" title="Techdata Items" translate="title" module="Emizen_Techdata" sortOrder="20" parent="Emizen_Techdata::view" action="techdata/grid/index" resource="Emizen_Techdata::display"/>
+    </menu>
+</config>

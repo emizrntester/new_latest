@@ -1,0 +1,30 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd">
+
+	<head>
+        <title>hello</title>
+        <!--
+		demo
+		<css src="SilkSoftware_ModuleName::css/css.css"/>
+		<script src="SilkSoftware_ModuleName::js/js.js"/>
+		<css src="jquery/fileUploader/css/jquery.fileupload-ui.css"/>
+		<script src="path/file.js" defer="defer"/>
+		<link src="http://url.com" src_type="url"/>
+		<remove src="path/remove/file.css"/>
+
+		-->
+    </head>
+
+    <body>
+
+
+        <referenceContainer name="sidebar.main">
+            <block class="Emizen\Codetest\Block\Index\Sidebar" name="codetest_index_sidebar" before="-" template="Emizen_Codetest::codetest_index_test.phtml"/>
+        </referenceContainer>
+
+        <referenceContainer name="content">
+            <block class="Emizen\Codetest\Block\Index\test" name="codetest_index_test" template="SilkSoftware_ModuleName::codetest_index_test.phtml"/>
+        </referenceContainer>
+
+
+    </body>
+</page>

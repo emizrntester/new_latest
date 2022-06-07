@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+	<preference for="Mock\Exam\Api\MockexamManagementInterface" type="Mock\Exam\Model\MockexamManagement"/>
+	<preference for="Mock\Exam\Api\MockexamRepositoryInterface" type="Mock\Exam\Model\MockexamRepository"/>
+	<preference for="Mock\Exam\Api\Data\MockexamInterface" type="Mock\Exam\Model\Mockexam"/>
+	<preference for="Mock\Exam\Api\Data\MockexamSearchResultsInterface" type="Magento\Framework\Api\SearchResults"/>
+	<virtualType name="Mock\Exam\Model\ResourceModel\Mockexam\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+		<arguments>
+			<argument name="mainTable" xsi:type="string">mock_exam_mockexam</argument>
+			<argument name="resourceModel" xsi:type="string">Mock\Exam\Model\ResourceModel\Mockexam\Collection</argument>
+		</arguments>
+	</virtualType>
+	<type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+		<arguments>
+			<argument name="collections" xsi:type="array">
+				<item name="mock_exam_mockexam_listing_data_source" xsi:type="string">Mock\Exam\Model\ResourceModel\Mockexam\Grid\Collection</item>
+			</argument>
+		</arguments>
+	</type>
+</config>

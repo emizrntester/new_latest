@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+       
+        <referenceContainer name="header.panel">
+            <!-- <block class="Magento\Cms\Block\Block" name="header_top" before="-">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">header_top</argument>
+                </arguments>
+            </block> -->
+            <container name="header_rightcont_new" label="Page Header" htmlTag="div" htmlClass="moengage_new moengage_tag" after="header_top">
+     
+               
+                <block class="Magento\Framework\View\Element\Template" name="head_block_new" before="store_switcher" template="Emizentech_Scriptconfig::scripts.phtml"></block>
+                <!--<block class="Magento\Store\Block\Switcher" name="store_switcher" as="store_switcher" after="-" template="Magento_Store::switch/stores.phtml"/>-->
+            </container>
+        </referenceContainer>
+       
+    </body>
+</page>

@@ -1,0 +1,32 @@
+type Query
+{
+    CustomGraphql (
+        username: String @doc(description: "Email Address/Mobile Number")
+        password: String @doc(description: "Password")
+        fieldtype: String @doc(description: "Field Type")
+        websiteId: Int = 1 @doc (description: "Website Id")
+    ): CustomGraphqlOutput @resolver(class: "Zamoroka\\WebapiDocuments\\Model\\Resolver\\CustomGraphql") @doc(description:"Custom Module Datapassing")
+}
+type CustomGraphqlOutput
+{
+    username: String
+    password: String
+    fieldtype: String
+}
+type Query {
+    testcustomer(
+        category_id: Int @doc(description: "category_id of the customer")
+    ): Testcustomer 
+@resolver(class:"Zamoroka\\WebapiDocuments\\Model\\Resolver\\Customer") 
+@doc(description:
+    "The testcustomer query returns information about a customer") 
+@cache(cacheable: false)
+}
+type Testcustomer @doc(description: "Testcustomer defines the customer name and other details") {
+   
+    availablefilter: String
+    
+}
+
+
+

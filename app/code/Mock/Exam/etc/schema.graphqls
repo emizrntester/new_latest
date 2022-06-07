@@ -1,0 +1,5 @@
+
+type StoreConfig {
+    
+    exam_test_enable  : String  @doc(description: "Query by exam_test_enable.") 
+}

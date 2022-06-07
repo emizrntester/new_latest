@@ -1,0 +1,29 @@
+{
+  "name": "magenest/customFields",
+  "description": "mgenest customFields",
+  "require": {
+    "php": "~7.0.0|7.0.2|7.0.4|~7.0.6|~7.1.0|~7.2.0|~7.3.0"
+  },
+  "type": "magento2-module",
+  "version": "1.0.0",
+  "license": [
+    "OSL-3.0",
+    "AFL-3.0"
+  ],
+  "authors": [
+    {
+      "name": "customFields",
+      "email": "marketplace@codedecorator.com",
+      "homepage": "https://codedecorator.com"
+    }
+  ],
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "Magenest\\CustomFields\\": ""
+    }
+  }
+
+}

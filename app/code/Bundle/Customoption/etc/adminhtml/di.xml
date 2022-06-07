@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Bundle\Ui\DataProvider\Product\Form\Modifier\BundleCustomOptions">
+        <plugin
+            sortOrder="100"
+            name="Bundle\CustomoptionBundleModifierCustomOptions"
+            type="Bundle\Customoption\Plugin\Ui\DataProvider\Product\Form\Modifier\BundleCustomOptions"/>
+    </type>
+    <type name="Magento\Bundle\Ui\DataProvider\Product\Form\Modifier\Composite">
+        <plugin
+            sortOrder="100"
+            name="Bundle\CustomoptionModifierComposite"
+            type="Bundle\Customoption\Plugin\Ui\DataProvider\Product\Form\Modifier\Composite"/>
+    </type>
+    <preference for="Magento\Bundle\Model\LinkManagement" type="Bundle\Customoption\Preference\Model\LinkManagement" />
+</config>

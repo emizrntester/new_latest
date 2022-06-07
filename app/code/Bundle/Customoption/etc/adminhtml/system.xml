@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!--
+ * @package     bundlecustomoption
+
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        
+         <tab id="subs_id" translate="label" sortOrder="110">
+             <label>Subscription Days</label>
+         </tab>
+        <section id="bundlecustomoption" translate="label" type="text" sortOrder="8096099" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label><![CDATA[Subscription]]></label>
+            <tab>subs_id</tab>
+            <resource>Bundle_Customoption::config</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General</label>
+                <attribute type="expanded">1</attribute>
+              
+             
+                <field id="total_subscription_days" translate="label comment" type="text" sortOrder="30" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Total Subscription Days</label>
+                    <attribute type="total_subscription_days">Total Subscription Days</attribute>
+                </field>
+
+                 
+                
+            </group>
+
+           
+        </section>
+    </system>
+</config>

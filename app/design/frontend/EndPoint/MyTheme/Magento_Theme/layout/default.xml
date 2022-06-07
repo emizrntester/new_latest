@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<page layout="3columns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="css/source/style.css" order="100" />
+    </head>
+    <body>
+    	<referenceBlock name="catalog-search-advanced-link" remove="true"/>
+    	<referenceBlock name="footer_links">
+    	<block class="Magento\Framework\View\Element\Html\Link\Current" name="footer-about-link" after="search-term-popular-link">
+                <arguments>
+                    <argument name="label" xsi:type="string" translate="true">About Us</argument>
+                    <argument name="path" xsi:type="string">about-us</argument>
+                </arguments>
+            </block>
+            <block class="Magento\Framework\View\Element\Html\Link" name="custom-form">
+                <arguments>
+                    <argument name="label" xsi:type="string">Registration form</argument>
+                    <argument name="path" xsi:type="string">town</argument>
+                </arguments>
+            </block>
+            <!-- @use this code for Customer Details link add to footer -->
+             <!-- <block class="Magento\Framework\View\Element\Html\Link" name="custom-list">
+                <arguments>
+                    <argument name="label" xsi:type="string">Customer Details </argument>
+                    <argument name="path" xsi:type="string">town/index/showdata/</argument>
+                </arguments>
+            </block> -->
+        </referenceBlock>
+    </body>
+</page>

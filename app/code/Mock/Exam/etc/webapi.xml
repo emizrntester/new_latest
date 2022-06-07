@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+	<route url="/V1/mock-exam/mockexam" method="GET">
+		<service class="Mock\Exam\Api\MockexamManagementInterface" method="getMockexam"/>
+		<resources>
+			<resource ref="anonymous"/>
+		</resources>
+	</route>
+	<route url="/V1/mock-exam/mockexam" method="POST">
+		<service class="Mock\Exam\Api\MockexamRepositoryInterface" method="save"/>
+		<resources>
+			<resource ref="Mock_Exam::mockexam_save"/>
+		</resources>
+	</route>
+	<route url="/V1/mock-exam/mockexam/search" method="GET">
+		<service class="Mock\Exam\Api\MockexamRepositoryInterface" method="getList"/>
+		<resources>
+			<resource ref="Mock_Exam::mockexam_view"/>
+		</resources>
+	</route>
+	<route url="/V1/mock-exam/mockexam/:mockexamId" method="GET">
+		<service class="Mock\Exam\Api\MockexamRepositoryInterface" method="get"/>
+		<resources>
+			<resource ref="Mock_Exam::mockexam_view"/>
+		</resources>
+	</route>
+	<route url="/V1/mock-exam/mockexam/:mockexamId" method="PUT">
+		<service class="Mock\Exam\Api\MockexamRepositoryInterface" method="save"/>
+		<resources>
+			<resource ref="Mock_Exam::mockexam_update"/>
+		</resources>
+	</route>
+	<route url="/V1/mock-exam/mockexam/:mockexamId" method="DELETE">
+		<service class="Mock\Exam\Api\MockexamRepositoryInterface" method="deleteById"/>
+		<resources>
+			<resource ref="Mock_Exam::mockexam_delete"/>
+		</resources>
+	</route>
+</routes>

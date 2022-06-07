@@ -1,0 +1,54 @@
+<h1>Enter Your Detils for registretion</h1>
+<form class="" action="<?php echo $block->getFormAction(); ?>" id="my-form" method="post"
+    data-hasrequired="* Required Fields" enctype="multipart/form-data" data-mage-init='{"validation": {}}'>
+    <fieldset class="fieldset">
+
+        <div class="field blog_id required">
+            <label class="label" for="blog_id"><span>blog_id</span></label>
+            <div class="control">
+                <input name="blog_id" id="blog_id" title="blog_id" value="" class="input-text" type="text"
+                    required="true">
+            </div>
+        </div>
+        <div class="field blog_title required">
+            <label class="label" for="blog_title"><span>blog_title</span></label>
+            <div class="control">
+                <input name="blog_title" id="blog_title" title="blog_title" value="" class="input-text" type="text"
+                    required="true" validate-no-html-tags="true">
+            </div>
+            <div class="field blog_description required">
+                <label class="label" for="field3"><span>blog_description</span></label>
+                <div class="control">
+                    <input name="blog_description" id="blog_description" title="blog_description" value="" class="input-text" type="blog_description"
+                        required="true">
+                </div>
+            </div>
+            <div class="field status required">
+                <label class="label" for="field4"><span>status</span></label>
+                <div class="control">
+                    <input name="status" id="status" title="status" class="input-text" type="text" required="true"></input>
+                </div>
+            </div>
+            <div class="field logo required">
+                <label class="label" for="field4"><span>logo</span></label>
+                <div class="control">
+                    <input name="logo" id="logo" title="logo" class="input-file" type="file"
+                        required="true"></input>
+                </div>
+            </div>
+    </fieldset>
+    <div class="actions-toolbar">
+        <div class="primary">
+            <button type="submit" title="Submit" class="action submit primary">
+                <span>Submit</span>
+            </button>
+               
+        </div>
+    </div>
+</form>
+
+         <hr>
+            <button class="action submit primary" 
+                onclick="window.location.href = 'https://marinehub.ezxdemo.com/town/index/showdata/';">
+            Show Details 
+            </button>

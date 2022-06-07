@@ -1,0 +1,13 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd">
+
+	<head>
+        <title>UI Component</title>
+    </head>
+         <body>
+     
+
+        <referenceContainer name="content">
+            <block class="RH\UiExample\Block\Index\Showdata" name="uiexample_index_index" template="RH_UiExample::showdata.phtml"/>
+        </referenceContainer>
+    </body>
+</page>

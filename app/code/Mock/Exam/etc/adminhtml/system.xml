@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+	<system>
+		<tab id="mock" translate="label" sortOrder="999">
+			<label>mock</label>
+		</tab>
+		<section id="exam" sortOrder="10" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+			<label>exam</label>
+			<tab>mock</tab>
+			<resource>Mock_Exam::config_mock_exam</resource>
+			<group id="test" sortOrder="10" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+				<label>test</label>
+				<field id="enable" type="select" sortOrder="10" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+					<label>enable</label>
+					<comment/>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>
+			</group>
+		</section>
+	</system>
+</config>

@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../Magento/Backend/etc/menu.xsd">
+    <menu>
+        <add id="Bundle_Customoption::parent" title="Customoption" module="Bundle_Customoption" sortOrder="100" resource="Bundle_Customoption::parent"/>
+		<add id="Bundle_Customoption::bundlecustomoption" title="Customoption Bundlecustomoption" module="Bundle_Customoption" sortOrder="20" parent="Bundle_Customoption::parent" action="customoption/bundlecustomoption" resource="Bundle_Customoption::bundlecustomoption"/>
+
+    </menu>
+</config>

@@ -1,0 +1,56 @@
+<?php
+ $collection = $block->getCollection();
+if ($collection->count()) {
+?>
+<div class="table-wrapper orders-history">
+    <table class="data table table-order-items history" id="my-orders-table">
+        <caption class="table-caption"><?php echo __('Grid Record') ?></caption>
+        <thead>
+        <tr>
+            <th scope="col" class="col id"><?php echo __('ID') ?></th>
+            <th scope="col" class="col name"><?php echo __('full_name') ?></th>
+            <th scope="col" class="col email"><?php echo __('Email') ?></th>
+            <th scope="col" class="col address"><?php echo __('address') ?></th>
+            <th scope="col" class="col phone"><?php echo __('phone') ?></th>
+            <th scope="col" class="col Upload_img"><?php echo __('Upload_img') ?></th>
+
+            <!-- <th scope="col" class="col createat"><?php //echo __('Created At') ?></th> -->
+        </tr>
+        </thead>
+        <tbody>
+        <?php
+ foreach ($collection as $item): ?>
+        <tr>
+            <td data-th="<?= $block->escapeHtml(__('ID')) ?>" class="col id">
+                <?php echo $item->getId() ?>
+            </td>
+            <td data-th="<?= $block->escapeHtml(__('full_name')) ?>" class="col full_name">
+                <?php echo $item->getFullName() ?>
+            </td>
+            <td data-th="<?= $block->escapeHtml(__('Email')) ?>" class="col email">
+                <?php echo $item->getEmail() ?>
+            </td>
+            <td data-th="<?= $block->escapeHtml(__('address')) ?>" class="col address">
+                <?php echo $item->getAddress() ?>
+            </td>
+            <td data-th="<?= $block->escapeHtml(__('phone')) ?>" class="col phone">
+                <?php echo $item->getPhone() ?>
+            </td>
+            <td data-th="<?= $block->escapeHtml(__('Upload_img')) ?>" class="col Upload_img">
+                <?php  $item->getData('Upload_img'); ?>
+                <img src="<?php echo $this->getUrl().'media/Town/'.$item->getData('Upload_img'); ?>" width="100" height="150">
+            </td>
+            <!-- <td data-th="<?= $block->escapeHtml(__('Created At')) ?>"
+                class="col title"><?php echo date('Y-m-d', strtotime($item->getCreatedAt())); ?></td> -->
+        </tr>
+        <?php endforeach; ?>
+        </tbody>
+    </table>
+            <button class="action submit primary" 
+    onclick="window.location.href = 'https://marinehub.ezxdemo.com/town/';">
+        Registration Form 
+    </button>
+</div>
+<?php
+ }
+ ?>

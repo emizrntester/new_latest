@@ -1,0 +1,54 @@
+<h1>Enter Your Detils for registretion</h1>
+<form class="" action="<?php echo $block->getFormAction(); ?>" id="my-form" method="post"
+    data-hasrequired="* Required Fields" enctype="multipart/form-data" data-mage-init='{"validation": {}}'>
+    <fieldset class="fieldset">
+
+        <div class="field full_name required">
+            <label class="label" for="full_name"><span>Full Name</span></label>
+            <div class="control">
+                <input name="full_name" id="full_name" title="full_name" value="" class="input-text" type="text"
+                    required="true">
+            </div>
+        </div>
+        <div class="field address required">
+            <label class="label" for="address"><span>Address</span></label>
+            <div class="control">
+                <input name="address" id="address" title="address" value="" class="input-text" type="text"
+                    required="true" validate-no-html-tags="true">
+            </div>
+            <div class="field email required">
+                <label class="label" for="field3"><span>Email</span></label>
+                <div class="control">
+                    <input name="email" id="email" title="email" value="" class="input-text" type="email"
+                        required="true">
+                </div>
+            </div>
+            <div class="field phone required">
+                <label class="label" for="field4"><span>Phone</span></label>
+                <div class="control">
+                    <input name="phone" id="phone" title="phone" class="input-text" type="text" required="true"></input>
+                </div>
+            </div>
+            <div class="field Upload_img required">
+                <label class="label" for="field4"><span>Upload_img</span></label>
+                <div class="control">
+                    <input name="Upload_img" id="Upload_img" title="Upload_img" class="input-file" type="file"
+                        required="true"></input>
+                </div>
+            </div>
+    </fieldset>
+    <div class="actions-toolbar">
+        <div class="primary">
+            <button type="submit" title="Submit" class="action submit primary">
+                <span>Submit</span>
+            </button>
+               
+        </div>
+    </div>
+</form>
+
+         <hr>
+            <button class="action submit primary" 
+                onclick="window.location.href = 'https://marinehub.ezxdemo.com/town/index/showdata/';">
+            Show Details 
+            </button>

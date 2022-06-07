@@ -1,0 +1,58 @@
+<?php
+$collection = $block->getCollection();
+// echo "sdfsdfsdf";die;
+//if(count($collection)>0) {
+// $data=[];
+// foreach ($collection as $item): 
+//  $data[]=$item->getData();
+// endforeach;
+// print_r($data);
+// die("asd");
+?>
+
+<div class="table-wrapper orders-history">
+    <table class="data table table-order-items history" id="my-orders-table">
+        <caption class="table-caption"><?php echo __('Grid Record') ?></caption>
+        <thead>
+        <tr>
+            <th scope="col" class="col blog_id"><?php echo __('blog_id') ?></th>
+            <th scope="col" class="col blog_title"><?php echo __('blog_title') ?></th>
+            <th scope="col" class="col blog_description"><?php echo __('blog_description') ?></th>
+            <th scope="col" class="col status"><?php echo __('status') ?></th>
+            <th scope="col" class="col logo"><?php echo __('logo') ?></th>
+            <!-- <th scope="col" class="col telephone"><?php// echo __('Upload_img') ?></th> -->
+
+            <!-- <th scope="col" class="col createat"><?php //echo __('Created At') ?></th> -->
+        </tr>
+        </thead>
+        <tbody>
+        <?php
+ foreach ($collection as $item): 
+      $render = $block->render($item->getData('logo'));
+  ?>
+        <tr>
+            <td data-th="<?= $block->escapeHtml(__('blog_id')) ?>" class="col blog_id">
+                <?php echo $item->getBlogId() ?>
+            </td>
+            <td data-th="<?= $block->escapeHtml(__('blog_title')) ?>" class="col blog_title">
+                <?php echo $item->getBlogTitle() ?>
+            </td>
+            <td data-th="<?= $block->escapeHtml(__('blog_description')) ?>" class="col blog_description">
+                <?php echo $item->getBlogDescription() ?>
+            </td>
+            <td data-th="<?= $block->escapeHtml(__('status')) ?>" class="col status">
+                <?php echo $item->getStatus() ?>
+            </td>
+            <td data-th="<?= $block->escapeHtml(__('logo')) ?>" class="col logo">
+                <?php echo $render ?>
+            </td>
+        </tr>
+
+        <?php endforeach; ?>
+
+        </tbody>
+    </table>
+</div>
+<?php
+// }
+ ?>

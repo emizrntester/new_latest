@@ -1,0 +1,27 @@
+<form class="form form-shipping-address" id="co-shipping-form">
+    <!-- ko foreach: getRegion('before-fields') -->
+    <!-- ko template: getTemplate() --><!-- /ko -->
+    <!--/ko-->
+    <div id="shipping-new-address-form" class="fieldset address">
+        <!-- ko foreach: getRegion('additional-fieldsets') -->
+        <!-- ko template: getTemplate() --><!-- /ko -->
+        <!--/ko-->
+        <!-- ko if: (isCustomerLoggedIn) -->
+        <div class="field choice">
+            <input type="checkbox" class="checkbox" id="shipping-save-in-address-book" data-bind="checked: saveInAddressBook" />
+            <label class="label" for="shipping-save-in-address-book">
+                <span data-bind="i18n: 'Save in address book'"></span>
+            </label>
+        </div>
+
+         <div class="field choice">
+           <div class="field choice set shipping">
+                <input type="checkbox" id="primary_shipping" name="default_shipping" value="1" class="checkbox">
+                <label class="label" for="primary_shipping">
+                 <span data-bind="i18n: 'Use as my default shipping address'"></span>
+                </label>
+            </div>
+        </div>
+        <!-- /ko -->
+    </div>
+</form>

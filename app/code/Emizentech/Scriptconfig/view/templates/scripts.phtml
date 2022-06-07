@@ -1,0 +1,117 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+?>
+
+
+
+
+
+
+
+<?php /** @var $block \Magento\Checkout\Block\Onepage\Success */ ?>
+
+
+<?php 
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$incrementId = $block->getOrderId();
+$orderInterface = $objectManager->create('Magento\Sales\Api\Data\OrderInterface'); 
+$orderdata = $orderInterface->loadByIncrementId($incrementId);
+if($orderdata->getCouponCode()){
+    $couponcode = $orderdata->getCouponCode();
+}else{
+    $couponcode = '';
+}
+$data_array =array();
+$myJSON ='';
+$productdata ='';
+$data ='';
+$persons= array();
+foreach ($orderdata->getAllVisibleItems() as $_item) {
+ 
+  $data = $data_array['Product'] =  array(
+            'Product' =>array(
+                "productID" =>  $_item->getSku(),
+                "category" => "2",
+                "price" => $_item->getPrice(),
+                "priceCurrency" => $orderdata->getOrderCurrencyCode()
+            ),
+             'orderQuantity': '<?php echo $orderdata->getTotalQtyOrdered() ?>',
+            'additionalType': 'sale'
+           
+        );
+  array_push($persons, $data);
+  //$data = array_push($data,$data_array);
+
+         
+
+ }
+//print_r( $persons);die;
+  $myJSON = json_encode($persons);
+
+ ?>
+
+<script type="text/javascript">
+ADMITAD = window.ADMITAD || {};
+ADMITAD.Invoice = ADMITAD.Invoice || {};
+
+if (!getSourceCookie(cookie_name)) {
+    ADMITAD.Invoice.broker = 'na';
+} else if (getSourceCookie(cookie_name) != deduplication_cookie_value) {
+    ADMITAD.Invoice.broker = getSourceCookie(cookie_name);
+} else {
+    ADMITAD.Invoice.broker = 'adm';
+}
+
+ADMITAD.Invoice.category = '1';
+
+var orderedItem = [];
+
+   
+        orderedItem.push({
+            <?php echo $myJSON; ?>,
+           
+        });
+
+ADMITAD.Invoice.referencesOrder = ADMITAD.Invoice.referencesOrder || [];
+// adding items to the order
+ADMITAD.Invoice.referencesOrder.push({
+    orderNumber: '<?php echo $block->getOrderId(); ?>',  // internal order ID (not more than 100 characters)
+    discountCode: '<?php echo $couponcode; ?>',  // unique promo code (only if it's Admitad's offline/unique promocode)
+    // ADMITAD.Invoice.broker = 'adm'; // this line is to appear only after Admitad's unique promocode used with order
+    orderedItem: orderedItem
+});
+</script>
+
+
+
+
+<!-- <script src="https://www.artfut.com/static/tagtag.min.js?campaign_code=2b39cd270a" async></script>
+ -->
+ <div class="checkout-success">
+
+
+<?php if ($block->getOrderId()) :?>
+
+
+
+
+        <?php if ($block->getCanViewOrder()) :?>
+            <p><?= $block->escapeHtml(__('Your order number is: %1.', sprintf('<a href="%s" class="order-number"><strong>%s</strong></a>', $block->escapeUrl($block->getViewOrderUrl()), $block->getOrderId())), ['a', 'strong']) ?></p>
+        <?php  else :?>
+            <p><?= $block->escapeHtml(__('Your order # is: <span>%1</span>.', $block->getOrderId()), ['span']) ?></p>
+        <?php endif;?>
+            <p><?= $block->escapeHtml(__('We\'ll email you an order confirmation with details and tracking info.')) ?></p>
+    <?php endif;?>
+
+    <?= $block->getAdditionalInfoHtml() ?>
+
+    <div class="actions-toolbar">
+        <div class="primary">
+            <a class="action primary continue" href="<?= $block->escapeUrl($block->getContinueUrl()) ?>"><span><?= $block->escapeHtml(__('Continue Shopping')) ?></span></a>
+        </div>
+    </div>
+</div>

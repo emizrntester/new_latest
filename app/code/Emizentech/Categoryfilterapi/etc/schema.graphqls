@@ -1,0 +1,17 @@
+type Query {
+    categorylayer(
+        category_id: Int @doc(description: "category_id of the customer")
+    ): Filtersall 
+@resolver(class:"Zamoroka\\WebapiDocuments\\Model\\Resolver\\Customer") 
+@doc(description:
+    "The testcustomer query returns information about a customer") 
+@cache(cacheable: false)
+}
+type Filtersall @doc(description: "Testcustomer defines the customer name and other details") {
+   
+    availablefilter: String
+    
+}
+
+
+

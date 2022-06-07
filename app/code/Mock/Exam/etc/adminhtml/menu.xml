@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+	<menu>
+		<add id="Mock::top_level" title="Mock" module="Mock_Exam" sortOrder="9999" resource="Magento_Backend::content"/>
+		<add id="Mock_Exam::mock_exam_mockexam" title="mockexam" module="Mock_Exam" sortOrder="9999" resource="Magento_Backend::content" parent="Mock::top_level" action="mock_exam/mockexam/index"/>
+	</menu>
+</config>
